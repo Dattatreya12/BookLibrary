@@ -1,21 +1,42 @@
-﻿
+﻿@model BookLibrary.Models.BookModel
 @{
     ViewData["Title"] = "GetBook";
     Layout = "~/Views/Shared/_Layout.cshtml";
+   
 }
 
-<h1>GetBook</h1>
+<style type="text/css">
+    .card img {
+        transform: scale(1,1);
+        transition-duration: 500ms;
+        transition-timing-function: ease-in-out;
+      
+    }
+    .card:hover img {
+        transform: scale(1.2,1.2);
+        transition-duration: 500ms;
+        transition-timing-function: ease-in-out;
+        opacity: .7;
+    }
+    h3{
+        text-align:center;
+        font-weight:bold;
+        background-color:cornflowerblue;
+    }
+</style>
 
+
+<h3>Buy Your Book Here (OR) Add to Cart</h3>
 <div class="container">
     <div class="row">
         <div class="col-md-6">
-            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+            <div id="carouselExampleIndicators" class="carousel slide shadow-lg" data-ride="carousel">
                 <ol class="carousel-indicators">
                     <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
                     <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
                     <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
                 </ol>
-                <div class="carousel-inner">
+                <div class="carousel-inner card">
                     <div class="carousel-item active">
                        
                         <img src="~/images/Book_logo.jpg"  class="d-block w-100" alt="...">
@@ -26,6 +47,7 @@
                     <div class="carousel-item">
                         <img src="~/images/Book_logo.jpg"  class="d-block w-100" alt="...">
                     </div>
+
                 </div>
                 <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -38,7 +60,15 @@
             </div>
         </div>
         <div class="col-md-6">
-
+            <div class="card-body shadow-lg">
+                <h4 class="card-title font-weight-bold"><b>Book Title</b>:@Model.Title</h4>
+                <p class="card-text"><b>Book Price</b>:@Model.price</p>
+                <p class="card-text"><b>Book Author</b>:@Model.Author</p>
+                <p class="card-text"><b>Book Description</b>:@Model.Description</p>
+                <button type="submit" class="btn btn-success">BUY</button>
+                <a class="btn btn-danger" asp-area="" asp-controller="Book" asp-action="GetAllBooks">Cancel</a>
+                <a href="/Book/GetBook/@Model.Id" class="btn btn-info">Add Cart</a>
+            </div>
         </div>
 
     </div>

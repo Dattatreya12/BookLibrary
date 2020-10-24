@@ -18,6 +18,7 @@ namespace BookLibrary.Controllers
         }
         public ViewResult GetAllBooks()
         {
+            ViewData["count"] = _bookrepository.GetBookTotalCount();
             var data = _bookrepository.GetAllBooks();
             return View(data);
         }
@@ -27,5 +28,6 @@ namespace BookLibrary.Controllers
             var bookid = _bookrepository.GetBookById(id);
             return View(bookid);
         }
+       
     }
 }

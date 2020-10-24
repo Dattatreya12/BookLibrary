@@ -11,5 +11,6 @@ namespace BookLibrary.Repository
         List<BookModel> GetAllBooks();
 
         BookModel GetBookById(int i);
+        int GetBookTotalCount();
     }
 }
