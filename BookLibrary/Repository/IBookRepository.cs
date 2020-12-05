@@ -1,4 +1,5 @@
 ﻿using BookLibrary.Models;
+using BookLibrary.Models.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,11 +7,14 @@ using System.Threading.Tasks;
 
 namespace BookLibrary.Repository
 {
-    public interface IBookRepository
+    public interface IBookRepository<T>
     {
-        List<BookModel> GetAllBooks();
+        Task<List<T>> GetAllBooks();
 
-        BookModel GetBookById(int i);
+        Task<List<BookModel>> GetAllBooksfromBM();
+        Book GetBookById(int i);
         int GetBookTotalCount();
+
+        Task<int> Insert(T item);
     }
 }

@@ -1,4 +1,4 @@
-﻿@model BookLibrary.Models.BookModel
+﻿@model BookLibrary.Models.Book
 @{
     ViewData["Title"] = "GetBook";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -6,7 +6,7 @@
 }
 
 <style type="text/css">
-    .card img {
+   /* .card img {
         transform: scale(1,1);
         transition-duration: 500ms;
         transition-timing-function: ease-in-out;
@@ -22,7 +22,7 @@
         text-align:center;
         font-weight:bold;
         background-color:cornflowerblue;
-    }
+    }*/
 </style>
 
 
@@ -36,7 +36,7 @@
                     <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
                     <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
                 </ol>
-                <div class="carousel-inner card">
+                <div class="carousel-inner">
                     <div class="carousel-item active">
                        
                         <img src="~/images/Book_logo.jpg"  class="d-block w-100" alt="...">

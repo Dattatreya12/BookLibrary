@@ -2,10 +2,13 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using BookLibrary.Data;
+using BookLibrary.Models;
 using BookLibrary.Repository;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -25,10 +28,14 @@ namespace BookLibrary
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
-            services.AddSingleton<IBookRepository,BookRepository>();
-#if DEBUG
+
             services.AddRazorPages().AddRazorRuntimeCompilation();
-#endif
+            services.AddDbContext<BookStoreContext>(options => options.UseSqlServer(Configuration.GetConnectionString("Default")));
+            // services.AddDbContext<BookStoreContext>(options => options.UseSqlServer(Configuration.GetConnectionString("core")));
+            services.AddTransient<IBookRepository<Book>, BookRepository>();
+            services.AddScoped<BookRepository, BookRepository>();
+            services.AddScoped<ILanguageRepository, LanguageRepository>();
+            services.AddMemoryCache();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
