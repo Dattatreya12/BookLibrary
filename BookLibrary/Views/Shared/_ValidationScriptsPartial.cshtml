@@ -4,5 +4,11 @@
 <script type="text/javascript">
     $(document).ready(function () {
         alert('All');
+
+        $('input#amount').blur(function() {
+            $('input#Tamount').val(parseInt($('input#Tamount').val()) + parseInt($('input#amount').val()))
+        })
     });
+
+    
 </script>

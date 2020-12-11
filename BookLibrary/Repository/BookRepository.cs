@@ -89,7 +89,6 @@ namespace BookLibrary.Repository
                 {
                     books.Add(new BookModel()
                     {
-
                         Title = book1.Title,
                         Author = book1.Author,
                         price = book1.price,

@@ -1,4 +1,5 @@
 ﻿using Microsoft.Data.SqlClient;
+using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -9,10 +10,12 @@ namespace BookLibrary.CommonConnection
 {
     public static class myConnection
     {
+        // private IConfiguration _configuration;
         public static SqlConnection GetConnection()
         {
-            string str = ConfigurationManager.ConnectionStrings["Default"].ConnectionString;
-            SqlConnection con = new SqlConnection(str);
+            //string connectionString = _configuration["ConnectionStrings:Default"];
+            string connectionString = "Server=DATTA;Database=BookApp;Trusted_Connection=True;MultipleActiveResultSets=true";
+            SqlConnection con = new SqlConnection(connectionString);
             con.Open();
             return con;
         }

@@ -9,6 +9,7 @@ namespace BookLibrary.Repository
     {
         Task<List<LanguageModel>> GetLanguage();
         Task<List<dropdownMonthly>> getmonths();
+        Task<List<dropdownMonthly>> getsqlmonths();
         Task<List<DropdownYearly>> getyears();
     }
 }
