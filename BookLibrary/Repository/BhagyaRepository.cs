@@ -87,8 +87,8 @@ namespace BookLibrary.Repository
                         ym = book1.ym,
                         CreatedOn = book1.CreatedOn,
                         month = book1.Name,
-                        year = book1.Name
-                    });
+                        year = DateTime.Now.Year.ToString()
+                    }); ;
                 }
             }
 

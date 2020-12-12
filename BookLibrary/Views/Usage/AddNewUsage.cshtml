@@ -3,91 +3,100 @@
 @{
     ViewData["Title"] = "AddNewUsage";
 }
+    <style type="text/css">
 
-<h1>AddNewUsage</h1>
+        /*.loader {
+            position: fixed;
+            text-align: center;
+            top: 0px;
+            width: 100%;
+            height: 100%;
+            z-index: 9999;
+            background: url('../../wwwroot/images/2.gif') 50% 50% no-repeat rgb(249,249,249);
+            background-color: rgba(255,255,255,0.7);
+        }*/
+    </style>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            @*<th>
-                    @Html.DisplayNameFor(model => model.Id)
-                </th>*@
-            <th>
-                @Html.DisplayNameFor(model => model.Itemname)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.TotalQuantity)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.amount)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Tamount)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.dm)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ym)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.CreatedOn)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.UpdatedOn)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model)
-        {
+<input type="button" value="Add Usage" id="partialView" class="btn btn-success" />
+<input type="button" value="GET USAGE" id="btnretriveusage" class="btn btn-danger" />
+<hr />
+<div id="getusage" class="gatusagedata">
+    <table class="table table-hover">
+        <thead class="bg-info text-capitalize font-weight-bold text-white">
             <tr>
-                @*<td>
-                        @Html.DisplayFor(modelItem => item.Id)
-                    </td>*@
-                <td>
-                    @Html.DisplayFor(modelItem => item.Itemname)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.TotalQuantity)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.amount)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Tamount)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.month)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.year)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.CreatedOn)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.UpdatedOn)
-                </td>
-                <td>
-                    @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-                    @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-                    @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
-                </td>
+                @*<th>
+                        @Html.DisplayNameFor(model => model.Id)
+                    </th>*@
+                <th>
+                    @Html.DisplayName("Items")
+                </th>
+                <th>
+                    @Html.DisplayName("Quantity")
+                </th>
+                <th>
+                    @Html.DisplayName("Amount")
+                </th>
+                <th>
+                    @Html.DisplayName("Total")
+                </th>
+                <th>
+                    @Html.DisplayName("Month")
+                </th>
+                <th>
+                    @Html.DisplayName("Year")
+                </th>
+                <th>
+                    @Html.DisplayName("Date")
+                </th>
+              
+                <th></th>
             </tr>
-        }
-    </tbody>
-</table>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    @*<td>
+                            @Html.DisplayFor(modelItem => item.Id)
+                        </td>*@
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Itemname)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TotalQuantity)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.amount)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Tamount)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.month)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.year)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CreatedOn)
+                    </td>
+                  
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                        @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                        @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
 
+<div id="partial"></div>
+@*<input class="search btn-default" type="button" value="Add" id="partialView"
+    data-assigned-id="1" data-toggle="modal" data-target="#exampleModalLong" />*@
 
-<input class="search btn-default" type="button" value="Add" id="partialView"
-       data-assigned-id="1" data-toggle="modal" data-target="#exampleModalLong" />
-
-<form method="Post" asp-action="AddNewUsage">
+@*<form method="Post" asp-action="AddNewUsage">
     <div asp-validation-summary="All" class="text-danger"></div>
     <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog" role="document">
@@ -99,29 +108,41 @@
                 </div>
                 <div class="modal-body">
                     <div id="partial"></div>
+                    <input type="text" id="txtitemname" class="form-control" />
+                    <input type="text" id="txtquantity" class="form-control" />
+                    <input type="text" id="txtamount" class="form-control" />
+                    <input id="txttamount" class="form-control" value="@ViewBag.totalusagefromlast" />
+                    <select id="drpmonth" class="form-control" value="@ViewBag.monthly">
+                        <option value="">Please select Months</option>
+                    </select>
+                    <select id="drpyear" class="form-control" value="@ViewBag.yearly">
+                        <option value="">Please select Year</option>
+                    </select>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
+                    <button type="button" class="btn btn-primary" id="btnSave">Save changes</button>
                 </div>
             </div>
         </div>
     </div>
-    </form>
-    <div id="addusage">
-
-    </div>
-
-    @section Scripts {
+    </form>*@
 
 
-        @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+@section Scripts {
 
-        <script type="text/javascript">
+
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+
+    <script type="text/javascript">
 
         $(document).ready(function () {
+
+
             $('input#btnaddusage').click(function () {
+                $('div#getusage').hide();
                 $('div#addusage').show();
+               
             })
             $('input#btnretriveusage').click(function () {
                 $('div#addusage').hide();
@@ -133,17 +154,41 @@
              });*@
             @*$("input#partialView").load('@Url.Action("Employee")');*@
 
+            $('div#addusage').click(function () {
+                $("div#getusage").fadeOut("slow");
+                $('div#addusage').fadeIn("slow")
+            })
 
         });
 
          $(function () {
              $('input#partialView').click(function () {
                 //var id = $(this).data('assigned-id');
-                var route = '@Url.Action("Employee", "Usage")';
-                $('#partial').load(route);
+                 var route = '@Url.Action("Employee", "Usage")';
+                 $('#partial').load(route);
+                 $('div#getusage').hide();
+               
             });
 
-        });
-        </script>
+         });
+           
+           
+            //$("button#btnSave").click(function () {
+            //    $.ajax(
+            //        {
+            //            type: "POST", //HTTP POST Method
+            //            url: "/Usage/AddNewUsage", // Controller/View
+            //            method: 'post',
+            //            data: { //Passing data
+            //                Itemname: $("input#txtitemname").val(), //Reading text box values using Jquery
+            //                TotalQuantity: $("input#txtquantity").val(),
+            //                amount: $("input#txtamount").val()
+            //            }
 
-    }
+            //        });
+
+            //});
+
+    </script>
+
+}

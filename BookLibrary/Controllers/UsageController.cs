@@ -43,8 +43,15 @@ namespace BookLibrary.Controllers
             //ViewBag.monthly = new SelectList(await _languageRepository.getsqlmonths(), "Id", "Name");
             ViewBag.yearly = new SelectList(await _languageRepository.getyears(), "Id", "Name");
             var Totalusagecalculate = _bhagyastoreRepoitory.GetTotalAmount();
-            ViewBag.totalusagefromlast = Totalusagecalculate.Tamount;
-            return PartialView("_UsageInsert");
+            if (Totalusagecalculate == null)
+            {
+                return PartialView("_UsageInsert");
+            }
+            else
+            {
+                ViewBag.totalusagefromlast = Totalusagecalculate.Tamount;
+                return PartialView("_UsageInsert");
+            }
         }
         [HttpPost]
         public async Task<IActionResult> AddNewUsage(Bhagyastorage bs)
@@ -58,7 +65,11 @@ namespace BookLibrary.Controllers
             {
                 id = await _bhagyastoreRepoitory.Insert(bs);
             }
-            return RedirectToAction("Index");
+            else
+            {
+                return View("AddNewUsage");
+            }
+            return RedirectToAction("AddNewUsage");
         }
 
         public async Task<IActionResult> GetMonth()

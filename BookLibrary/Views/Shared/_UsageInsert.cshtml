@@ -1,59 +1,61 @@
 ﻿@model BookLibrary.Models.Bhagyastorage
 
-<h4>Bhagyastorage</h4>
-<hr />
+@{
+
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
 
 
-<input type="button" value="Add Usage" id="btnaddusage" class="btn btn-success" />
-<input type="button" value="GET USAGE" id="btnretriveusage" class="btn btn-danger" />
-<div class="row bg-light" id="addusage">
-    <div class="col-md-4">
-    </div>
-    <div class="col-md-4 shadow-lg">
-        <form method="Post" asp-action="AddNewUsage">
-            <div asp-validation-summary="All" class="text-danger"></div>
+<div id="addusage" class="container-fluid">
+    <h2 class="text-center text-capitalize">Add Usage</h2>
+    <div class="row bg-light">
+        <div class="col-md-4">
+        </div>
+        <div class="col-md-4 shadow-lg">
+            <form method="post" action="AddNewUsage">
+                <div asp-validation-summary="All" class="text-danger"></div>
 
-            <div class="form-group">
-                <label asp-for="Itemname" class="control-label"></label>
-                <input asp-for="Itemname" class="form-control" />
-                <span asp-validation-for="Itemname" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="TotalQuantity" class="control-label"></label>
-                <input asp-for="TotalQuantity" class="form-control" />
-                <span asp-validation-for="TotalQuantity" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="amount" class="control-label"></label>
-                <input asp-for="amount" class="form-control" />
-                <span asp-validation-for="amount" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Tamount" class="control-label"></label>
-                <input asp-for="Tamount" class="form-control" value="@ViewBag.totalusagefromlast" />
-                <span asp-validation-for="Tamount" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="dm" class="control-label"></label>
-                <select asp-for="@Model.dm" class="form-control" asp-items=" ViewBag.monthly">
-                    <option value="">Please select Months</option>
-                </select>
-                <span asp-validation-for="dm" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="ym" class="control-label"></label>
-                <select asp-for="@Model.ym" class="form-control" asp-items=" ViewBag.yearly">
-                    <option value="">Please select Year</option>
-                </select>
-                <span asp-validation-for="ym" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
-        </form>
+                <div class="form-group">
+                    <label asp-for="Itemname" class="control-label"></label>
+                    <input asp-for="Itemname" class="form-control" />
+                    <span asp-validation-for="Itemname" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="TotalQuantity" class="control-label"></label>
+                    <input asp-for="TotalQuantity" class="form-control" />
+                    <span asp-validation-for="TotalQuantity" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="amount" class="control-label"></label>
+                    <input asp-for="amount" class="form-control" />
+                    <span asp-validation-for="amount" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Tamount" class="control-label"></label>
+                    <input asp-for="Tamount" class="form-control" value="@ViewBag.totalusagefromlast" />
+                    <span asp-validation-for="Tamount" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="dm" class="control-label"></label>
+                    <select asp-for="@Model.dm" class="form-control" asp-items=" ViewBag.monthly">
+                        <option value="">Please select Months</option>
+                    </select>
+                    <span asp-validation-for="dm" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="ym" class="control-label"></label>
+                    <select asp-for="@Model.ym" class="form-control" asp-items=" ViewBag.yearly">
+                        <option value="">Please select Year</option>
+                    </select>
+                    <span asp-validation-for="ym" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Create" id="btnpartialclick" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
     </div>
 </div>
-
 
 @*<div class="row">
         <div class="col-md-4">
@@ -122,4 +124,21 @@
     </div>*@
 
 
+@section Scripts {
 
+
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+
+    <script type="text/javascript">
+
+         @*$(function () {
+             $('input#btnpartialclick').click(function () {
+                //var id = $(this).data('assigned-id');
+                var route = '@Url.Action("AddNewUsage", "Usage")';
+                $('#partial').load(route);
+            });
+
+        });*@
+    </script>
+
+}
