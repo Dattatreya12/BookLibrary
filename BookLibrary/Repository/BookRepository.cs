@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace BookLibrary.Repository
 {
-    public class BookRepository : IBookRepository<Book>
+    public class BookRepository : IBookRepository<BookModel>
     {
         private readonly BookStoreContext _context = null;
 
@@ -78,7 +78,8 @@ namespace BookLibrary.Repository
                                       iint.Description,
                                       iint.price,
                                       iint.LanguageId,
-                                      iint.Id
+                                      iint.Id,
+                                      iint.CoverImageUrl,
                                   }
 
                                   ).ToListAsync();
@@ -95,7 +96,8 @@ namespace BookLibrary.Repository
                         Description = book1.Description,
                         LanguageId = book1.LanguageId,
                         Language = book1.Name,
-                        Id = book1.Id
+                        Id = book1.Id,
+                        CoverImageUrl = book1.CoverImageUrl,
 
                     });
                 }
@@ -109,13 +111,20 @@ namespace BookLibrary.Repository
             Book empDetails = (from emp in _context.Books
                                join us in _context.languages on emp.LanguageId equals us.Id
                                where emp.Id == id
-                               select new Book
+                               select new BookModel
                                {
                                    Title = emp.Title,
                                    Author = emp.Author,
                                    Id = emp.Id,
                                    Description = emp.Description,
                                    price = emp.price,
+                                   CoverImageUrl = emp.CoverImageUrl,
+                                   Gallery = emp.bookGallery.Select(x => new GalleryModel()
+                                   {
+                                       Id = x.Id,
+                                       Name = x.Name,
+                                       URL = x.URL
+                                   }).ToList()
                                }).FirstOrDefault();
 
             return empDetails;
@@ -130,7 +139,7 @@ namespace BookLibrary.Repository
 
         }
 
-        public async Task<int> Insert(Book item)
+        public async Task<int> Insert(BookModel item)
         {
             var newbook = new Book()
             {
@@ -142,19 +151,24 @@ namespace BookLibrary.Repository
                 LanguageId = item.LanguageId,
                 Category = item.Category,
                 CreatedOn = DateTime.UtcNow,
-                UpdatedOn = DateTime.UtcNow
-
+                UpdatedOn = DateTime.UtcNow,
+                CoverImageUrl = item.CoverImageUrl,
             };
+
+            newbook.bookGallery = new List<BookGallery>();
+
+            foreach (var file in item.Gallery)
+            {
+                newbook.bookGallery.Add(new BookGallery()
+                {
+                    Name = file.Name,
+                    URL = file.URL
+                });
+            }
 
             await _context.Books.AddAsync(newbook);
             await _context.SaveChangesAsync();
             return newbook.Id;
-
-        }
-
-        Task<List<Book>> IBookRepository<Book>.GetAllBooks()
-        {
-            throw new NotImplementedException();
         }
     }
 }

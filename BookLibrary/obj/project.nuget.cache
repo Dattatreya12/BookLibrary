@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "Uy2cBnloIkY/RRLMC7FoDmWUYX2COEYxk5RbFeOIWHJKg+sXXuHG1JYah30e0m/k6BMXWWNOTK+PR3t8x+XHaA==",
+  "dgSpecHash": "9A21RbWpTLbpzgjAbfGzEOjY32nzVv7o9wOlGMm3JBRAGF6RsitWbtsOJTe5e+rW1YgIo9HKNGaK495c5vLpfw==",
   "success": true,
   "projectFilePath": "D:\\S\\CORE APP\\DotnetCore_Videos\\Learning\\BookLibrary\\BookLibrary\\BookLibrary.csproj",
   "expectedPackageFiles": [
@@ -26,6 +26,7 @@
     "C:\\Users\\Dattatreya\\.nuget\\packages\\microsoft.entityframeworkcore.design\\3.1.3\\microsoft.entityframeworkcore.design.3.1.3.nupkg.sha512",
     "C:\\Users\\Dattatreya\\.nuget\\packages\\microsoft.entityframeworkcore.relational\\3.1.3\\microsoft.entityframeworkcore.relational.3.1.3.nupkg.sha512",
     "C:\\Users\\Dattatreya\\.nuget\\packages\\microsoft.entityframeworkcore.sqlserver\\3.1.3\\microsoft.entityframeworkcore.sqlserver.3.1.3.nupkg.sha512",
+    "C:\\Users\\Dattatreya\\.nuget\\packages\\microsoft.entityframeworkcore.tools\\3.1.3\\microsoft.entityframeworkcore.tools.3.1.3.nupkg.sha512",
     "C:\\Users\\Dattatreya\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\3.1.3\\microsoft.extensions.caching.abstractions.3.1.3.nupkg.sha512",
     "C:\\Users\\Dattatreya\\.nuget\\packages\\microsoft.extensions.caching.memory\\3.1.3\\microsoft.extensions.caching.memory.3.1.3.nupkg.sha512",
     "C:\\Users\\Dattatreya\\.nuget\\packages\\microsoft.extensions.configuration\\3.1.3\\microsoft.extensions.configuration.3.1.3.nupkg.sha512",

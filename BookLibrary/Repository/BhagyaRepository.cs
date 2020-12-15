@@ -22,9 +22,7 @@ namespace BookLibrary.Repository
         }
         public async Task<int> Insert(Bhagyastorage item)
         {
-            //var a = GetTotalAmount();
-            //double tm = a.Tamount;
-            //item.Tamount = item.Tamount + tm;
+            double a = GetTotalAmount();
             var bs = new Bhagyastorage()
             {
                 Itemname = item.Itemname,
@@ -37,16 +35,28 @@ namespace BookLibrary.Repository
                 UpdatedOn = DateTime.UtcNow
             };
 
-            await _context.bhagyastorages.AddAsync(bs);
-            await _context.SaveChangesAsync();
-            return bs.Id;
+            if (item.Tamount == a)
+            {
+                return bs.Id;
+            }
+            else
+            {
+                await _context.bhagyastorages.AddAsync(bs);
+                await _context.SaveChangesAsync();
+                return bs.Id;
+            }
         }
 
-        public Bhagyastorage GetTotalAmount()
+        public double GetTotalAmount()
         {
             //int totalamountfromDB = (from soh in _context.bhagyastorages
             //                         select soh.Tamount).FirstOrDefault()
-            return _context.bhagyastorages.OrderByDescending(totalamount => totalamount.Id).FirstOrDefault();
+            double totalamountfromDB = (from soh in _context.bhagyastorages
+                                        orderby soh.Tamount descending
+                                        select soh.Tamount).FirstOrDefault();
+
+            return totalamountfromDB;
+            // return _context.bhagyastorages.OrderByDescending(totalamount => totalamount.Tamount).FirstOrDefault();
         }
 
         public async Task<List<Bhagyastorage>> GetAllUsage()
@@ -70,7 +80,7 @@ namespace BookLibrary.Repository
                                       n.Name,
                                   }
 
-                                  ).ToListAsync();
+                                  ).Distinct().ToListAsync();
 
             if (allbooks?.Any() == true)
             {

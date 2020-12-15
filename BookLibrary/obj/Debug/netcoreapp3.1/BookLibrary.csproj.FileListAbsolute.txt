@@ -1,13 +1,6 @@
-D:\S\CORE APP\DotnetCore_Videos\Learning\BookLibrary\BookLibrary\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.dll
-D:\S\CORE APP\DotnetCore_Videos\Learning\BookLibrary\BookLibrary\bin\Debug\netcoreapp3.1\Microsoft.Identity.Client.dll
-D:\S\CORE APP\DotnetCore_Videos\Learning\BookLibrary\BookLibrary\bin\Debug\netcoreapp3.1\System.Drawing.Common.dll
-D:\S\CORE APP\DotnetCore_Videos\Learning\BookLibrary\BookLibrary\bin\Debug\netcoreapp3.1\System.Windows.Extensions.dll
-D:\S\CORE APP\DotnetCore_Videos\Learning\BookLibrary\BookLibrary\bin\Debug\netcoreapp3.1\cs\Microsoft.CodeAnalysis.CSharp.resources.dll
-D:\S\CORE APP\DotnetCore_Videos\Learning\BookLibrary\BookLibrary\bin\Debug\netcoreapp3.1\ru\Microsoft.CodeAnalysis.Workspaces.resources.dll
-D:\S\CORE APP\DotnetCore_Videos\Learning\BookLibrary\BookLibrary\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
-D:\S\CORE APP\DotnetCore_Videos\Learning\BookLibrary\BookLibrary\obj\Debug\netcoreapp3.1\BookLibrary.RazorTargetAssemblyInfo.cs
 D:\S\CORE APP\DotnetCore_Videos\Learning\BookLibrary\BookLibrary\bin\Debug\netcoreapp3.1\appsettings.Development.json
 D:\S\CORE APP\DotnetCore_Videos\Learning\BookLibrary\BookLibrary\bin\Debug\netcoreapp3.1\appsettings.json
+D:\S\CORE APP\DotnetCore_Videos\Learning\BookLibrary\BookLibrary\bin\Debug\netcoreapp3.1\libman.json
 D:\S\CORE APP\DotnetCore_Videos\Learning\BookLibrary\BookLibrary\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
 D:\S\CORE APP\DotnetCore_Videos\Learning\BookLibrary\BookLibrary\bin\Debug\netcoreapp3.1\BookLibrary.exe
 D:\S\CORE APP\DotnetCore_Videos\Learning\BookLibrary\BookLibrary\bin\Debug\netcoreapp3.1\BookLibrary.deps.json
@@ -288,6 +281,7 @@ D:\S\CORE APP\DotnetCore_Videos\Learning\BookLibrary\BookLibrary\bin\Debug\netco
 D:\S\CORE APP\DotnetCore_Videos\Learning\BookLibrary\BookLibrary\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Razor.Language.dll
 D:\S\CORE APP\DotnetCore_Videos\Learning\BookLibrary\BookLibrary\bin\Debug\netcoreapp3.1\Microsoft.Bcl.AsyncInterfaces.dll
 D:\S\CORE APP\DotnetCore_Videos\Learning\BookLibrary\BookLibrary\bin\Debug\netcoreapp3.1\Microsoft.Bcl.HashCode.dll
+D:\S\CORE APP\DotnetCore_Videos\Learning\BookLibrary\BookLibrary\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.dll
 D:\S\CORE APP\DotnetCore_Videos\Learning\BookLibrary\BookLibrary\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.CSharp.dll
 D:\S\CORE APP\DotnetCore_Videos\Learning\BookLibrary\BookLibrary\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.CSharp.Workspaces.dll
 D:\S\CORE APP\DotnetCore_Videos\Learning\BookLibrary\BookLibrary\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.Razor.dll
@@ -310,6 +304,7 @@ D:\S\CORE APP\DotnetCore_Videos\Learning\BookLibrary\BookLibrary\bin\Debug\netco
 D:\S\CORE APP\DotnetCore_Videos\Learning\BookLibrary\BookLibrary\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.Abstractions.dll
 D:\S\CORE APP\DotnetCore_Videos\Learning\BookLibrary\BookLibrary\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Options.dll
 D:\S\CORE APP\DotnetCore_Videos\Learning\BookLibrary\BookLibrary\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Primitives.dll
+D:\S\CORE APP\DotnetCore_Videos\Learning\BookLibrary\BookLibrary\bin\Debug\netcoreapp3.1\Microsoft.Identity.Client.dll
 D:\S\CORE APP\DotnetCore_Videos\Learning\BookLibrary\BookLibrary\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.dll
 D:\S\CORE APP\DotnetCore_Videos\Learning\BookLibrary\BookLibrary\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Contracts.dll
 D:\S\CORE APP\DotnetCore_Videos\Learning\BookLibrary\BookLibrary\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Core.dll
@@ -328,12 +323,14 @@ D:\S\CORE APP\DotnetCore_Videos\Learning\BookLibrary\BookLibrary\bin\Debug\netco
 D:\S\CORE APP\DotnetCore_Videos\Learning\BookLibrary\BookLibrary\bin\Debug\netcoreapp3.1\System.Composition.TypedParts.dll
 D:\S\CORE APP\DotnetCore_Videos\Learning\BookLibrary\BookLibrary\bin\Debug\netcoreapp3.1\System.Configuration.ConfigurationManager.dll
 D:\S\CORE APP\DotnetCore_Videos\Learning\BookLibrary\BookLibrary\bin\Debug\netcoreapp3.1\System.Data.SqlClient.dll
+D:\S\CORE APP\DotnetCore_Videos\Learning\BookLibrary\BookLibrary\bin\Debug\netcoreapp3.1\System.Drawing.Common.dll
 D:\S\CORE APP\DotnetCore_Videos\Learning\BookLibrary\BookLibrary\bin\Debug\netcoreapp3.1\System.Runtime.Caching.dll
 D:\S\CORE APP\DotnetCore_Videos\Learning\BookLibrary\BookLibrary\bin\Debug\netcoreapp3.1\System.Security.AccessControl.dll
 D:\S\CORE APP\DotnetCore_Videos\Learning\BookLibrary\BookLibrary\bin\Debug\netcoreapp3.1\System.Security.Cryptography.ProtectedData.dll
 D:\S\CORE APP\DotnetCore_Videos\Learning\BookLibrary\BookLibrary\bin\Debug\netcoreapp3.1\System.Security.Permissions.dll
 D:\S\CORE APP\DotnetCore_Videos\Learning\BookLibrary\BookLibrary\bin\Debug\netcoreapp3.1\System.Security.Principal.Windows.dll
 D:\S\CORE APP\DotnetCore_Videos\Learning\BookLibrary\BookLibrary\bin\Debug\netcoreapp3.1\System.Text.Json.dll
+D:\S\CORE APP\DotnetCore_Videos\Learning\BookLibrary\BookLibrary\bin\Debug\netcoreapp3.1\System.Windows.Extensions.dll
 D:\S\CORE APP\DotnetCore_Videos\Learning\BookLibrary\BookLibrary\bin\Debug\netcoreapp3.1\cs\Microsoft.CodeAnalysis.resources.dll
 D:\S\CORE APP\DotnetCore_Videos\Learning\BookLibrary\BookLibrary\bin\Debug\netcoreapp3.1\de\Microsoft.CodeAnalysis.resources.dll
 D:\S\CORE APP\DotnetCore_Videos\Learning\BookLibrary\BookLibrary\bin\Debug\netcoreapp3.1\es\Microsoft.CodeAnalysis.resources.dll
@@ -347,6 +344,7 @@ D:\S\CORE APP\DotnetCore_Videos\Learning\BookLibrary\BookLibrary\bin\Debug\netco
 D:\S\CORE APP\DotnetCore_Videos\Learning\BookLibrary\BookLibrary\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.resources.dll
 D:\S\CORE APP\DotnetCore_Videos\Learning\BookLibrary\BookLibrary\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.resources.dll
 D:\S\CORE APP\DotnetCore_Videos\Learning\BookLibrary\BookLibrary\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.resources.dll
+D:\S\CORE APP\DotnetCore_Videos\Learning\BookLibrary\BookLibrary\bin\Debug\netcoreapp3.1\cs\Microsoft.CodeAnalysis.CSharp.resources.dll
 D:\S\CORE APP\DotnetCore_Videos\Learning\BookLibrary\BookLibrary\bin\Debug\netcoreapp3.1\de\Microsoft.CodeAnalysis.CSharp.resources.dll
 D:\S\CORE APP\DotnetCore_Videos\Learning\BookLibrary\BookLibrary\bin\Debug\netcoreapp3.1\es\Microsoft.CodeAnalysis.CSharp.resources.dll
 D:\S\CORE APP\DotnetCore_Videos\Learning\BookLibrary\BookLibrary\bin\Debug\netcoreapp3.1\fr\Microsoft.CodeAnalysis.CSharp.resources.dll
@@ -381,6 +379,7 @@ D:\S\CORE APP\DotnetCore_Videos\Learning\BookLibrary\BookLibrary\bin\Debug\netco
 D:\S\CORE APP\DotnetCore_Videos\Learning\BookLibrary\BookLibrary\bin\Debug\netcoreapp3.1\ko\Microsoft.CodeAnalysis.Workspaces.resources.dll
 D:\S\CORE APP\DotnetCore_Videos\Learning\BookLibrary\BookLibrary\bin\Debug\netcoreapp3.1\pl\Microsoft.CodeAnalysis.Workspaces.resources.dll
 D:\S\CORE APP\DotnetCore_Videos\Learning\BookLibrary\BookLibrary\bin\Debug\netcoreapp3.1\pt-BR\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\S\CORE APP\DotnetCore_Videos\Learning\BookLibrary\BookLibrary\bin\Debug\netcoreapp3.1\ru\Microsoft.CodeAnalysis.Workspaces.resources.dll
 D:\S\CORE APP\DotnetCore_Videos\Learning\BookLibrary\BookLibrary\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
 D:\S\CORE APP\DotnetCore_Videos\Learning\BookLibrary\BookLibrary\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
 D:\S\CORE APP\DotnetCore_Videos\Learning\BookLibrary\BookLibrary\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
@@ -390,6 +389,7 @@ D:\S\CORE APP\DotnetCore_Videos\Learning\BookLibrary\BookLibrary\bin\Debug\netco
 D:\S\CORE APP\DotnetCore_Videos\Learning\BookLibrary\BookLibrary\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\sni.dll
 D:\S\CORE APP\DotnetCore_Videos\Learning\BookLibrary\BookLibrary\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\sni.dll
 D:\S\CORE APP\DotnetCore_Videos\Learning\BookLibrary\BookLibrary\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\sni.dll
+D:\S\CORE APP\DotnetCore_Videos\Learning\BookLibrary\BookLibrary\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
 D:\S\CORE APP\DotnetCore_Videos\Learning\BookLibrary\BookLibrary\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
 D:\S\CORE APP\DotnetCore_Videos\Learning\BookLibrary\BookLibrary\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll
 D:\S\CORE APP\DotnetCore_Videos\Learning\BookLibrary\BookLibrary\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll
@@ -400,10 +400,6 @@ D:\S\CORE APP\DotnetCore_Videos\Learning\BookLibrary\BookLibrary\bin\Debug\netco
 D:\S\CORE APP\DotnetCore_Videos\Learning\BookLibrary\BookLibrary\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\System.Security.Principal.Windows.dll
 D:\S\CORE APP\DotnetCore_Videos\Learning\BookLibrary\BookLibrary\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Security.Principal.Windows.dll
 D:\S\CORE APP\DotnetCore_Videos\Learning\BookLibrary\BookLibrary\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
-D:\S\CORE APP\DotnetCore_Videos\Learning\BookLibrary\BookLibrary\obj\Debug\netcoreapp3.1\BookLibrary.csprojAssemblyReference.cache
-D:\S\CORE APP\DotnetCore_Videos\Learning\BookLibrary\BookLibrary\obj\Debug\netcoreapp3.1\BookLibrary.csproj.CoreCompileInputs.cache
-D:\S\CORE APP\DotnetCore_Videos\Learning\BookLibrary\BookLibrary\obj\Debug\netcoreapp3.1\BookLibrary.MvcApplicationPartsAssemblyInfo.cs
-D:\S\CORE APP\DotnetCore_Videos\Learning\BookLibrary\BookLibrary\obj\Debug\netcoreapp3.1\BookLibrary.MvcApplicationPartsAssemblyInfo.cache
 D:\S\CORE APP\DotnetCore_Videos\Learning\BookLibrary\BookLibrary\obj\Debug\netcoreapp3.1\BookLibrary.RazorAssemblyInfo.cache
 D:\S\CORE APP\DotnetCore_Videos\Learning\BookLibrary\BookLibrary\obj\Debug\netcoreapp3.1\BookLibrary.RazorAssemblyInfo.cs
 D:\S\CORE APP\DotnetCore_Videos\Learning\BookLibrary\BookLibrary\obj\Debug\netcoreapp3.1\BookLibrary.AssemblyInfoInputs.cache
@@ -426,6 +422,7 @@ D:\S\CORE APP\DotnetCore_Videos\Learning\BookLibrary\BookLibrary\obj\Debug\netco
 D:\S\CORE APP\DotnetCore_Videos\Learning\BookLibrary\BookLibrary\obj\Debug\netcoreapp3.1\Razor\Views\_ViewImports.cshtml.g.cs
 D:\S\CORE APP\DotnetCore_Videos\Learning\BookLibrary\BookLibrary\obj\Debug\netcoreapp3.1\Razor\Views\_ViewStart.cshtml.g.cs
 D:\S\CORE APP\DotnetCore_Videos\Learning\BookLibrary\BookLibrary\obj\Debug\netcoreapp3.1\BookLibrary.RazorTargetAssemblyInfo.cache
+D:\S\CORE APP\DotnetCore_Videos\Learning\BookLibrary\BookLibrary\obj\Debug\netcoreapp3.1\BookLibrary.RazorTargetAssemblyInfo.cs
 D:\S\CORE APP\DotnetCore_Videos\Learning\BookLibrary\BookLibrary\obj\Debug\netcoreapp3.1\BookLibrary.Views.pdb
 D:\S\CORE APP\DotnetCore_Videos\Learning\BookLibrary\BookLibrary\obj\Debug\netcoreapp3.1\BookLibrary.csproj.CopyComplete
 D:\S\CORE APP\DotnetCore_Videos\Learning\BookLibrary\BookLibrary\obj\Debug\netcoreapp3.1\staticwebassets\BookLibrary.StaticWebAssets.Manifest.cache
@@ -433,3 +430,7 @@ D:\S\CORE APP\DotnetCore_Videos\Learning\BookLibrary\BookLibrary\obj\Debug\netco
 D:\S\CORE APP\DotnetCore_Videos\Learning\BookLibrary\BookLibrary\obj\Debug\netcoreapp3.1\BookLibrary.dll
 D:\S\CORE APP\DotnetCore_Videos\Learning\BookLibrary\BookLibrary\obj\Debug\netcoreapp3.1\BookLibrary.pdb
 D:\S\CORE APP\DotnetCore_Videos\Learning\BookLibrary\BookLibrary\obj\Debug\netcoreapp3.1\BookLibrary.genruntimeconfig.cache
+D:\S\CORE APP\DotnetCore_Videos\Learning\BookLibrary\BookLibrary\obj\Debug\netcoreapp3.1\BookLibrary.csproj.CoreCompileInputs.cache
+D:\S\CORE APP\DotnetCore_Videos\Learning\BookLibrary\BookLibrary\obj\Debug\netcoreapp3.1\BookLibrary.MvcApplicationPartsAssemblyInfo.cs
+D:\S\CORE APP\DotnetCore_Videos\Learning\BookLibrary\BookLibrary\obj\Debug\netcoreapp3.1\BookLibrary.MvcApplicationPartsAssemblyInfo.cache
+D:\S\CORE APP\DotnetCore_Videos\Learning\BookLibrary\BookLibrary\obj\Debug\netcoreapp3.1\BookLibrary.csprojAssemblyReference.cache

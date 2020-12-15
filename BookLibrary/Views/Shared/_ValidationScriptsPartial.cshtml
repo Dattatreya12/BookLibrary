@@ -4,11 +4,33 @@
 <script type="text/javascript">
     $(document).ready(function () {
         $('input#amount').blur(function () {
-            $('input#Tamount').val(parseInt($('input#Tamount').val()) + parseInt($('input#amount').val()))
+            if ($('input#amount').val() > 0 &&  $('input#amount').val() != '')
+            {
+                $('input#Tamount').val(parseInt($('input#Tamount').val()) + parseInt($('input#amount').val()))
+            }
+            else {
+                 var route = '@Url.Action("employee", "usage")';
+                 $('#partial').load(route);
+            }
         });
 
-      
+
+        //$('input#amount').blur(function () {
+
+        //    var t = 0;
+        //    var tamount = $('input#tamount').val();
+        //    var amount = $('input#amount').val();
+
+        //    if (amount > 0) {
+        //        return tamount = tamount + amount;
+        //    }
+        //    else {
+        //        return tamount;
+        //    }
+        //});
+
+
     });
 
-    
+
 </script>

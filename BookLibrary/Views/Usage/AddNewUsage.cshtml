@@ -3,19 +3,7 @@
 @{
     ViewData["Title"] = "AddNewUsage";
 }
-    <style type="text/css">
-
-        /*.loader {
-            position: fixed;
-            text-align: center;
-            top: 0px;
-            width: 100%;
-            height: 100%;
-            z-index: 9999;
-            background: url('../../wwwroot/images/2.gif') 50% 50% no-repeat rgb(249,249,249);
-            background-color: rgba(255,255,255,0.7);
-        }*/
-    </style>
+   
 
 <input type="button" value="Add Usage" id="partialView" class="btn btn-success" />
 <input type="button" value="GET USAGE" id="btnretriveusage" class="btn btn-danger" />
@@ -92,7 +80,7 @@
     </table>
 </div>
 
-<div id="partial"></div>
+<div id="partial" data-ajax="true"></div>
 @*<input class="search btn-default" type="button" value="Add" id="partialView"
     data-assigned-id="1" data-toggle="modal" data-target="#exampleModalLong" />*@
 
@@ -154,10 +142,7 @@
              });*@
             @*$("input#partialView").load('@Url.Action("Employee")');*@
 
-            $('div#addusage').click(function () {
-                $("div#getusage").fadeOut("slow");
-                $('div#addusage').fadeIn("slow")
-            })
+           
 
         });
 

@@ -25,8 +25,8 @@ namespace BookLibrary.Controllers
             ViewBag.monthly = new SelectList(await _languageRepository.getmonths(), "Id", "Name");
             //ViewBag.monthly = new SelectList(await _languageRepository.getsqlmonths(), "Id", "Name");
             ViewBag.yearly = new SelectList(await _languageRepository.getyears(), "Id", "Name");
-            var Totalusagecalculate = _bhagyastoreRepoitory.GetTotalAmount();
-            ViewBag.totalusagefromlast = Totalusagecalculate.Tamount;
+            double Totalusagecalculate = _bhagyastoreRepoitory.GetTotalAmount();
+            ViewBag.totalusagefromlast = Totalusagecalculate;
             return View();
         }
 
@@ -42,14 +42,14 @@ namespace BookLibrary.Controllers
             ViewBag.monthly = new SelectList(await _languageRepository.getmonths(), "Id", "Name");
             //ViewBag.monthly = new SelectList(await _languageRepository.getsqlmonths(), "Id", "Name");
             ViewBag.yearly = new SelectList(await _languageRepository.getyears(), "Id", "Name");
-            var Totalusagecalculate = _bhagyastoreRepoitory.GetTotalAmount();
-            if (Totalusagecalculate == null)
+            double Totalusagecalculate = _bhagyastoreRepoitory.GetTotalAmount();
+            if (Totalusagecalculate == 0)
             {
                 return PartialView("_UsageInsert");
             }
             else
             {
-                ViewBag.totalusagefromlast = Totalusagecalculate.Tamount;
+                ViewBag.totalusagefromlast = Totalusagecalculate;
                 return PartialView("_UsageInsert");
             }
         }
@@ -60,10 +60,9 @@ namespace BookLibrary.Controllers
             ViewBag.monthly = new SelectList(await _languageRepository.getmonths(), "Id", "Name");
             //ViewBag.monthly = new SelectList(await _languageRepository.getsqlmonths(), "Id", "Name");
             ViewBag.yearly = new SelectList(await _languageRepository.getyears(), "Id", "Name");
-            int id = 0;
             if (ModelState.IsValid)
             {
-                id = await _bhagyastoreRepoitory.Insert(bs);
+                await _bhagyastoreRepoitory.Insert(bs);
             }
             else
             {

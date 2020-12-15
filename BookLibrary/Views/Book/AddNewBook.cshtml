@@ -1,94 +1,127 @@
-﻿@model BookLibrary.Models.Book
+﻿@model BookLibrary.Models.ViewModel.BookModel
 @{
     ViewData["Title"] = "AddNewBook";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+<div id="save">
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        <h4> <strong>HI!</strong> Successfully created your bOOK</h4>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close" onclick="getCarOwnersusingAjax()">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+</div>
 
 
 @if(ViewBag.success == true)
 {
-<div class="alert alert-warning alert-dismissible fade show" role="alert">
+<div id="save" class="alert alert-warning alert-dismissible fade show" role="alert">
     <h4> <strong>HI!</strong> Successfully created your bOOK</h4>
-    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close"  onclick="getCarOwnersusingAjax()">
         <span aria-hidden="true">&times;</span>
     </button>
 </div>
 }
-else 
-{
-    <h4>Error</h4>
-}
-<div class="container">
-    <div class="row bg-light border-success">
-       
-            <div class="col-md-4">
-               
-                <img src="~/images/Book_logo.jpg" />
-            </div>
-           <div class=" bg-light col-md-8">
-               <form method="Post" asp-action="AddNewBook">
-                   <!--<div class="form-group">
-            <label asp-for="Title" class="control-label"></label>
-            <input asp-for="Title" class="form-control" />
-        </div>-->
-
-                   <table class="table table-hover bg-light bg-dark text-white">
-                       <tr>
-                           <td>
-                               <h4 class="font-weight-bold">Add New Book</h4>
-                           </td>
-                       </tr>
-                       <tr>
-                         
-                           <td><input asp-for="@Model.Title" class="form-control" placeholder="Title" /></td>
-                       </tr>
-
-                       <tr>
-                         
-                           <td> <input asp-for="@Model.Author" class="form-control" placeholder="Author" /></td>
-                       </tr>
-
-                       <tr>
-                          
-                           <td> <input asp-for="@Model.Description" class="form-control" placeholder="Description" /></td>
-                       </tr>
-
-                       <tr>
-                          
-                           <td><select asp-for="@Model.LanguageId" class="form-control" asp-items=" ViewBag.languages">
-                               <option value="">Please select language</option></select>
-
-                           </td>
-                       </tr>
-
-                       <tr>
-
-                           
-                           <td><input asp-for="@Model.Category" class="form-control" placeholder="Category" /></td>
-                       </tr>
-
-                       <tr>
-
-                           
-                           <td><input asp-for="@Model.TotalPages" class="form-control" placeholder="TotalPages" /></td>
-                       </tr>
-
-                       <tr>
-                          
-                           <td> <input asp-for="@Model.price" class="form-control" placeholder="Price" /></td>
-
-                       </tr>
-
-                       <tr>
-                           <td class="text-center">
-                               <button type="submit" class="btn btn-success">SUBMIT</button>
-                           </td>
-                       </tr>
 
 
-                   </table>
+<div class="container-fluid">
+    <h2 class="text-capitalize text-center">Add Books</h2>
+    <div class="row bg-light">
+           <div class=" bg-light col-md-12">
+               <form method="Post" asp-action="AddNewBook" enctype="multipart/form-data" data-ajax="true" data-ajax-complete="myComplete" data-ajax-success="mySuccess">
+                  
+                   <div class="form-group">
+                       <label asp-for="Title" class="control-label"></label>
+                       <input asp-for="Title" class="form-control" />
+                   </div>
+
+
+                   <div class="form-group">
+                       <label asp-for="Author" class="control-label"></label>
+                       <input asp-for="Author" class="form-control" />
+                   </div>
+
+                   <div class="form-group">
+                       <label asp-for="Description" class="control-label"></label>
+                       <input asp-for="Description" class="form-control" />
+                   </div>
+
+                   <div class="form-group">
+                       <label asp-for="LanguageId" class="control-label"></label>
+                       <select asp-for="LanguageId" class="form-control" asp-items=" ViewBag.languages">
+                           <option value="">Please select language</option>
+                       </select>
+
+                   </div>
+
+                   <div class="form-group">
+                       <label asp-for="Category" class="control-label"></label>
+                       <input asp-for="Category" class="form-control" />
+                   </div>
+
+                   <div class="form-group">
+                       <label asp-for="TotalPages" class="control-label"></label>
+                       <input asp-for="TotalPages" class="form-control" />
+                   </div>
+
+                   <div class="form-group">
+                       <label asp-for="price" class="control-label"></label>
+                       <input asp-for="price" class="form-control" />
+                   </div>
+
+                   <div class="form-group">
+                       <label asp-for="CoverPhoto" class="control-label"></label>
+                       <div class="custom-file">
+                           <input asp-for="CoverPhoto" class="custom-file-input" id="customFile" />
+                           <label class="custom-file-label" for="customFile">choose file</label>
+                       </div>
+                   </div>
+
+
+                   <div class="form-group">
+                       <label asp-for="GalleryFiles" class="control-label"></label>
+                       <div class="custom-file">
+                           <input asp-for="GalleryFiles" class="custom-file-input" id="customFile" />
+                           <label class="custom-file-label" for="customFile">choose file</label>
+                       </div>
+                   </div>
+
+                   <div class="form-group">
+                     
+                       <div class="custom-file">
+                           <button type="submit" class="btn btn-success">SUBMIT</button>
+                       </div>
+                   </div>
+                   
                </form>
            </div>
         </div>
     </div>
+@section scripts {
+    <script>
+        $(document).ready(function () {
+            $('div#save').hide();
+        });
+        function myComplete() {
+            alert('completed');
+            $('input#Title').val(""); 
+            $('input#Author').val(""); 
+            $('input#Description').val("");
+            $('input#Category').val(""); 
+            $('input#TotalPages').val("");
+            $('input#price').val("");
+
+        }
+
+        function getCarOwnersusingAjax() {
+            $('div#save').hide();
+        }
+        function mySuccess() {
+            alert('Saved');
+            $('div#save').show();
+        }
+    </script>
+
+
+}

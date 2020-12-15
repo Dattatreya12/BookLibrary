@@ -10,6 +10,6 @@ namespace BookLibrary.Repository
     {
         Task<int> Insert(T item);
         Task<List<Bhagyastorage>> GetAllUsage();
-        Bhagyastorage GetTotalAmount();
+        double GetTotalAmount();
     };
 }
