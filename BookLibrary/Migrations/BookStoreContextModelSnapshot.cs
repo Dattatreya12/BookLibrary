@@ -19,12 +19,38 @@ namespace BookLibrary.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+            modelBuilder.Entity("BookLibrary.Data.BookGallery", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("BookId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("URL")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("BookId");
+
+                    b.ToTable("bookGalleries");
+                });
+
             modelBuilder.Entity("BookLibrary.Models.Bhagyastorage", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<DateTime?>("CreatedOn")
+                        .HasColumnType("datetime2");
 
                     b.Property<int?>("DropdownYearlyId")
                         .HasColumnType("int");
@@ -37,6 +63,9 @@ namespace BookLibrary.Migrations
 
                     b.Property<int>("TotalQuantity")
                         .HasColumnType("int");
+
+                    b.Property<DateTime?>("UpdatedOn")
+                        .HasColumnType("datetime2");
 
                     b.Property<int>("amount")
                         .HasColumnType("int");
@@ -56,7 +85,7 @@ namespace BookLibrary.Migrations
 
                     b.HasIndex("dropdownMonthlyId");
 
-                    b.ToTable("Bhagyastorage");
+                    b.ToTable("bhagyastorages");
                 });
 
             modelBuilder.Entity("BookLibrary.Models.Book", b =>
@@ -70,6 +99,9 @@ namespace BookLibrary.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Category")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("CoverImageUrl")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime?>("CreatedOn")
@@ -107,15 +139,10 @@ namespace BookLibrary.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int?>("DropdownYearlyId")
-                        .HasColumnType("int");
-
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("DropdownYearlyId");
 
                     b.ToTable("dropdownYearlies");
                 });
@@ -189,10 +216,19 @@ namespace BookLibrary.Migrations
                     b.ToTable("dropdownMonthlies");
                 });
 
+            modelBuilder.Entity("BookLibrary.Data.BookGallery", b =>
+                {
+                    b.HasOne("BookLibrary.Models.Book", null)
+                        .WithMany("bookGallery")
+                        .HasForeignKey("BookId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
             modelBuilder.Entity("BookLibrary.Models.Bhagyastorage", b =>
                 {
                     b.HasOne("BookLibrary.Models.DropdownYearly", "DropdownYearly")
-                        .WithMany()
+                        .WithMany("bhagyastorages")
                         .HasForeignKey("DropdownYearlyId");
 
                     b.HasOne("BookLibrary.Models.dropdownMonthly", "dropdownMonthly")
@@ -207,13 +243,6 @@ namespace BookLibrary.Migrations
                         .HasForeignKey("LanguageId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-                });
-
-            modelBuilder.Entity("BookLibrary.Models.DropdownYearly", b =>
-                {
-                    b.HasOne("BookLibrary.Models.DropdownYearly", null)
-                        .WithMany("dropdownYearlies")
-                        .HasForeignKey("DropdownYearlyId");
                 });
 #pragma warning restore 612, 618
         }

@@ -1,0 +1,179 @@
+﻿@model IEnumerable<BookLibrary.Models.Bhagyastorage>
+
+@{
+    ViewData["Title"] = "AddNewUsage";
+}
+   
+
+<input type="button" value="Add Usage" id="partialView" class="btn btn-success" />
+<input type="button" value="GET USAGE" id="btnretriveusage" class="btn btn-danger" />
+<hr />
+<div id="getusage" class="gatusagedata">
+    <table class="table table-hover">
+        <thead class="bg-info text-capitalize font-weight-bold text-white">
+            <tr>
+                @*<th>
+                        @Html.DisplayNameFor(model => model.Id)
+                    </th>*@
+                <th>
+                    @Html.DisplayName("Items")
+                </th>
+                <th>
+                    @Html.DisplayName("Quantity")
+                </th>
+                <th>
+                    @Html.DisplayName("Amount")
+                </th>
+                <th>
+                    @Html.DisplayName("Total")
+                </th>
+                <th>
+                    @Html.DisplayName("Month")
+                </th>
+                <th>
+                    @Html.DisplayName("Year")
+                </th>
+                <th>
+                    @Html.DisplayName("Date")
+                </th>
+              
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    @*<td>
+                            @Html.DisplayFor(modelItem => item.Id)
+                        </td>*@
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Itemname)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TotalQuantity)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.amount)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Tamount)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.month)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.year)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CreatedOn)
+                    </td>
+                  
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                        @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                        @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+<div id="partial" data-ajax="true"></div>
+@*<input class="search btn-default" type="button" value="Add" id="partialView"
+    data-assigned-id="1" data-toggle="modal" data-target="#exampleModalLong" />*@
+
+@*<form method="Post" asp-action="AddNewUsage">
+    <div asp-validation-summary="All" class="text-danger"></div>
+    <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div id="partial"></div>
+                    <input type="text" id="txtitemname" class="form-control" />
+                    <input type="text" id="txtquantity" class="form-control" />
+                    <input type="text" id="txtamount" class="form-control" />
+                    <input id="txttamount" class="form-control" value="@ViewBag.totalusagefromlast" />
+                    <select id="drpmonth" class="form-control" value="@ViewBag.monthly">
+                        <option value="">Please select Months</option>
+                    </select>
+                    <select id="drpyear" class="form-control" value="@ViewBag.yearly">
+                        <option value="">Please select Year</option>
+                    </select>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" id="btnSave">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    </form>*@
+
+
+@section Scripts {
+
+
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+
+
+            $('input#btnaddusage').click(function () {
+                $('div#getusage').hide();
+                $('div#addusage').show();
+               
+            })
+            $('input#btnretriveusage').click(function () {
+                $('div#addusage').hide();
+                $('div#getusage').show();
+            })
+
+            @*$("input#partialView").click(function() {
+              document.location = '@Url.Action("Employee","Usage")';
+             });*@
+            @*$("input#partialView").load('@Url.Action("Employee")');*@
+
+           
+
+        });
+
+         $(function () {
+             $('input#partialView').click(function () {
+                //var id = $(this).data('assigned-id');
+                 var route = '@Url.Action("Employee", "Usage")';
+                 $('#partial').load(route);
+                 $('div#getusage').hide();
+               
+            });
+
+         });
+           
+           
+            //$("button#btnSave").click(function () {
+            //    $.ajax(
+            //        {
+            //            type: "POST", //HTTP POST Method
+            //            url: "/Usage/AddNewUsage", // Controller/View
+            //            method: 'post',
+            //            data: { //Passing data
+            //                Itemname: $("input#txtitemname").val(), //Reading text box values using Jquery
+            //                TotalQuantity: $("input#txtquantity").val(),
+            //                amount: $("input#txtamount").val()
+            //            }
+
+            //        });
+
+            //});
+
+    </script>
+
+}

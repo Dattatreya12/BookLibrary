@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BookLibrary.Data;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
@@ -18,9 +19,10 @@ namespace BookLibrary.Models
         [NotMapped]
         public string Language { get; set; }
         public int TotalPages { get; set; }
+        public string CoverImageUrl { get; set; }
         public DateTime? CreatedOn { get; set; }
         public DateTime? UpdatedOn { get; set; }
-
         public Language language { get; set; }
+        public ICollection<BookGallery> bookGallery { get; set; }
     }
 }

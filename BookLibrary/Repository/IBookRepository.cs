@@ -10,7 +10,6 @@ namespace BookLibrary.Repository
     public interface IBookRepository<T>
     {
         Task<List<T>> GetAllBooks();
-
         Task<List<BookModel>> GetAllBooksfromBM();
         Book GetBookById(int i);
         int GetBookTotalCount();

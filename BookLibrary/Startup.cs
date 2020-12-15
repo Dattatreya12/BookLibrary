@@ -2,8 +2,10 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using BookLibrary.CommonConnection;
 using BookLibrary.Data;
 using BookLibrary.Models;
+using BookLibrary.Models.ViewModel;
 using BookLibrary.Repository;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -31,10 +33,14 @@ namespace BookLibrary
 
             services.AddRazorPages().AddRazorRuntimeCompilation();
             services.AddDbContext<BookStoreContext>(options => options.UseSqlServer(Configuration.GetConnectionString("Default")));
+            //services.AddSingleton<myConnection>(_ => new myConnection(Configuration["ConnectionStrings:Default"]));
             // services.AddDbContext<BookStoreContext>(options => options.UseSqlServer(Configuration.GetConnectionString("core")));
-            services.AddTransient<IBookRepository<Book>, BookRepository>();
+            services.AddSingleton<IConfiguration>(Configuration);
+            services.AddTransient<IBookRepository<BookModel>, BookRepository>();
             services.AddScoped<BookRepository, BookRepository>();
             services.AddScoped<ILanguageRepository, LanguageRepository>();
+            services.AddTransient<IBhagyastoreRepoitory<Bhagyastorage>, BhagyaRepository>();
+
             services.AddMemoryCache();
         }
 

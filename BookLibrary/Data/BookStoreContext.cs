@@ -20,6 +20,8 @@ namespace BookLibrary.Data
         public DbSet<LoanUsers> loanUsers { get; set; }
         public DbSet<dropdownMonthly> dropdownMonthlies { get; set; }
         public DbSet<DropdownYearly> dropdownYearlies { get; set; }
+        public DbSet<BookGallery> bookGalleries { get; set; }
+        public DbSet<Bhagyastorage> bhagyastorages { get; set; }
 
 
     }
